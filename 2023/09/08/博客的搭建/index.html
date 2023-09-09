@@ -1,11 +1,11 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
     <head>
         <meta charset="utf-8" />
-        <title>博客的搭建 | Hexo</title>
-        <meta name="author" content="John Doe" />
-        <meta name="description" content="" />
+        <title>博客的搭建 | 路漫漫其修远今,吾将上下而求索。</title>
+        <meta name="author" content="平凡人" />
+        <meta name="description" content="记录自己的学习心得以及学习记录" />
         <meta name="keywords" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
         <link rel="icon" href="/images/avatar.jpg" />
@@ -54,7 +54,7 @@
             <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
     <nav id="desktop-menu">
         <a class="title" href="/">
-            <span>HEXO</span>
+            <span>路漫漫其修远今,吾将上下而求索。</span>
         </a>
         
         <a href="/">
@@ -86,7 +86,7 @@
     <nav id="mobile-menu">
         <div class="title" @click="showMenuItems = !showMenuItems">
             <i class="fa-solid fa-bars fa-fw"></i>
-            <span>&emsp;HEXO</span>
+            <span>&emsp;路漫漫其修远今,吾将上下而求索。</span>
         </div>
         <transition name="slide">
             <div class="items" v-show="showMenuItems">
@@ -158,6 +158,29 @@
         </span>
         
         
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/HExo/" style="color: #00bcd4">HExo</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Github/" style="color: #ff7d73">Github</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="color: #00a596">博客</a>
+            </span>
+            
+        </span>
+        
     </div>
     
     <div class="content" v-pre>
@@ -213,10 +236,8 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在本地电脑生成密钥</p>
-</li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;717628672@qq.com&quot;</span>    #邮箱换成你的邮箱</span><br></pre></td></tr></table></figure></li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;717628672@qq.com&quot;</span>    #邮箱换成你的邮箱</span><br></pre></td></tr></table></figure>
-
 <img src="/2023/09/08/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/image-20230909175531936.png" alt="image-20230909175531936" style="zoom: 33%;">
 
 <p>秘钥的生成位置，如下：</p>
@@ -227,11 +248,39 @@
 <p><img src="/2023/09/08/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/image-20230909175841193.png" alt="image-20230909175841193"></p>
 <p><img src="/2023/09/08/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/image-20230909175905901.png" alt="image-20230909175905901"></p>
 <p><img src="/2023/09/08/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/image-20230909175927303.png" alt="image-20230909175927303"></p>
+<ul>
+<li>在<code>git bash</code>输入<code>ssh -T git@github.com</code>，如果如下图所示，出现你的用户名，那就成功了。</li>
+</ul>
 <h3 id="3-2在github上生成一个仓库"><a href="#3-2在github上生成一个仓库" class="headerlink" title="3.2在github上生成一个仓库"></a>3.2在github上生成一个仓库</h3><p><img src="/2023/09/08/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/image-20230909180106505.png" alt="image-20230909180106505"></p>
+<p><img src="/2023/09/08/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/image-20230909181452651.png" alt="image-20230909181452651"></p>
+<ul>
+<li>然后就可以拉到页面下方点击确认了，我们复制ssh链接，配置文件时需要用到，如果丢了在仓库里也可以查看</li>
+</ul>
+<p><img src="/2023/09/08/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/image-20230909183301840.png" alt="image-20230909183301840"></p>
+<p><img src="/2023/09/08/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/image-20230909183553197.png" alt="image-20230909183553197"></p>
+<h3 id="3-3将hexo部署到github"><a href="#3-3将hexo部署到github" class="headerlink" title="3.3将hexo部署到github"></a>3.3将hexo部署到github</h3><ul>
+<li>打开博客的根目录下的<code>_config.yml</code>文件在这里你可以修改与博客配置相关的各种信息。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy</span>:</span><br><span class="line">  <span class="attr">type</span>: git</span><br><span class="line">  <span class="attr">repository</span>: git@github.<span class="property">com</span>:<span class="title class_">StartAfresh</span>/<span class="title class_">StartAfresh</span>.<span class="property">github</span>.<span class="property">io</span>.<span class="property">git</span>  <span class="comment">//</span></span><br><span class="line">  <span class="attr">branch</span>: master</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># <span class="variable constant_">URL</span></span><br><span class="line">## <span class="title class_">Set</span> your site url here. <span class="title class_">For</span> example, <span class="keyword">if</span> you use <span class="title class_">GitHub</span> <span class="title class_">Page</span>, set url <span class="keyword">as</span> <span class="string">&#x27;https://username.github.io/project&#x27;</span></span><br><span class="line"><span class="attr">url</span>: <span class="attr">https</span>:<span class="comment">//StartAfresh.github.io/</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>repository</code>修改为你自己的<code>github</code>项目地址即可就是部署时，告诉工具，将生成网页通过<code>git</code>方式上传到你对应的链接仓库中。</p>
+<p>这个时候需要先安装<code>deploy-git</code> ，也就是部署的命令,这样你才能用命令部署到<code>GitHub</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>下一步</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo c    <span class="comment">//清除缓存</span></span><br><span class="line">hexo generate	<span class="comment">//生成静态页面</span></span><br><span class="line">hexo d	<span class="comment">//将博客推上github</span></span><br><span class="line">注意：d时可能要你输入username和password。</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/09/08/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/image-20230909182902860.png" alt="image-20230909182902860"></p>
 <h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><blockquote>
 <p>hexo + Typora 图片上传问题</p>
 </blockquote>
-<p><strong>解决步骤：</strong></p>
+<h2 id="1-hexo-Typora-图片上传问题"><a href="#1-hexo-Typora-图片上传问题" class="headerlink" title="1. hexo + Typora 图片上传问题"></a>1. hexo + Typora 图片上传问题</h2><p><strong>解决步骤：</strong></p>
 <ol>
 <li>修改typora图片放置的位置。当自己新建一个文章时，添加图片自动创建存放图片的文件（文件夹的名字与文章笔记相同）</li>
 </ol>
@@ -255,7 +304,7 @@
 <p><img src="/2023/09/08/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/image-20230909160456443.png" alt="image-20230909160456443"></p>
 </li>
 </ol>
-
+<h2 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h2>
     </div>
     
     
@@ -270,11 +319,11 @@
     <div id="footer-wrap">
         <div>
             &copy;
-            2022 - 2023 Hexo
+            2022 - 2023 路漫漫其修远今,吾将上下而求索。
             <span id="footer-icon">
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
-            &commat;John Doe
+            &commat;平凡人
         </div>
         <div>
             Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
