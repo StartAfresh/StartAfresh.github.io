@@ -181,7 +181,74 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <h1 id="前置工具准备"><a href="#前置工具准备" class="headerlink" title="前置工具准备"></a>前置工具准备</h1><h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><blockquote>
+            <h1 id="一、前置工具准备"><a href="#一、前置工具准备" class="headerlink" title="一、前置工具准备"></a>一、前置工具准备</h1><blockquote>
+<p>因为要部署到gihthub上，我们需要准备node.js包管理工具，以及git将代码推到github进行管理</p>
+</blockquote>
+<h2 id="1-安装git"><a href="#1-安装git" class="headerlink" title="1. 安装git"></a>1. 安装git</h2><p><a target="_blank" rel="noopener" href="https://git-scm.com/download/win">git</a>进入网站下载</p>
+<img src="/2023/09/08/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/image-20230909163309097.png" alt="image-20230909163309097" style="zoom:50%;">
+
+<p>然后傻瓜式安装。</p>
+<h2 id="2-安装node"><a href="#2-安装node" class="headerlink" title="2.安装node"></a>2.安装node</h2><p><a target="_blank" rel="noopener" href="https://nodejs.cn/download/">node.js</a>进入网站下载</p>
+<img src="/2023/09/08/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/image-20230909163644502.png" alt="image-20230909163644502" style="zoom: 33%;">
+
+
+
+<p>添加国内镜像源（因为node.js包是在外网，没有梯子可以更改国内镜像）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry <span class="attr">https</span>:<span class="comment">//registry.npm.taobao.org</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="二、搭建流程"><a href="#二、搭建流程" class="headerlink" title="二、搭建流程"></a>二、搭建流程</h1><h2 id="1-安装HEXO"><a href="#1-安装HEXO" class="headerlink" title="1. 安装HEXO"></a>1. 安装HEXO</h2><ul>
+<li>以管理员身份运行CMD （注意）❤️</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli   # -g表示全局安装</span><br><span class="line">输入hexo -v 验证是否安装完成</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-搭建本地博客"><a href="#2-搭建本地博客" class="headerlink" title="2.搭建本地博客"></a>2.搭建本地博客</h2><ul>
+<li>安装博客你需要进入你指定的文件夹,打开git命令窗口</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init <span class="string">&quot;blog&quot;</span> <span class="comment">//		“创建的文件名”</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装相关依赖</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install 或 npm i</span><br></pre></td></tr></table></figure>
+
+
+
+<img src="/2023/09/08/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/image-20230909172815035.png" alt="image-20230909172815035" style="zoom: 67%;">
+
+<p><img src="/2023/09/08/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/image-20230909173338367.png" alt="image-20230909173338367"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo g 生成页面</span><br><span class="line">hexo s 打开本地服务器</span><br><span class="line">ctrl + c 关闭服务器</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/09/08/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/image-20230909173452595.png" alt="image-20230909173452595"></p>
+<h2 id="3-github-操作"><a href="#3-github-操作" class="headerlink" title="3.github 操作"></a>3.github 操作</h2><ul>
+<li>注册github(自己创建)</li>
+<li>在本地电脑生成一个密钥并在github上添加密钥</li>
+<li>在github上生成一个仓库</li>
+<li>将hexo部署到github</li>
+</ul>
+<h3 id="3-1-在本地电脑生成一个密钥并在github上添加密钥"><a href="#3-1-在本地电脑生成一个密钥并在github上添加密钥" class="headerlink" title="3.1 在本地电脑生成一个密钥并在github上添加密钥"></a>3.1 在本地电脑生成一个密钥并在github上添加密钥</h3><ul>
+<li><p>在git命令窗口，创建你的名字和你的邮箱</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name  wangcai  【和你注册github时的账号一样】</span><br><span class="line">git config --global user.email xxx@qq.com    【和你注册github时的邮箱一样】</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>检测有没有输入成功</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在本地电脑生成密钥</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;717628672@qq.com&quot;</span>    #邮箱换成你的邮箱</span><br></pre></td></tr></table></figure>
+
+<img src="/2023/09/08/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/image-20230909175531936.png" alt="image-20230909175531936" style="zoom: 33%;">
+
+<p>秘钥的生成位置，如下：</p>
+<p><img src="/2023/09/08/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/image-20230909175603133.png" alt="image-20230909175603133"></p>
+<p>把公钥copy到github上，找到公钥，如下 ：</p>
+<p><img src="/2023/09/08/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/image-20230909175655560.png" alt="image-20230909175655560"></p>
+<p><img src="/2023/09/08/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/image-20230909175716625.png" alt="image-20230909175716625"></p>
+<p><img src="/2023/09/08/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/image-20230909175841193.png" alt="image-20230909175841193"></p>
+<p><img src="/2023/09/08/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/image-20230909175905901.png" alt="image-20230909175905901"></p>
+<p><img src="/2023/09/08/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/image-20230909175927303.png" alt="image-20230909175927303"></p>
+<h3 id="3-2在github上生成一个仓库"><a href="#3-2在github上生成一个仓库" class="headerlink" title="3.2在github上生成一个仓库"></a>3.2在github上生成一个仓库</h3><p><img src="/2023/09/08/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/image-20230909180106505.png" alt="image-20230909180106505"></p>
+<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><blockquote>
 <p>hexo + Typora 图片上传问题</p>
 </blockquote>
 <p><strong>解决步骤：</strong></p>
