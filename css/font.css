@@ -1,8 +1,9 @@
 @font-face {
-  font-family: "iconfont"; /* Project id 3596365 */
-  src: url('//at.alicdn.com/t/c/font_3596365_861qcmiscke.woff2?t=1694596490326') format('woff2'),
-       url('//at.alicdn.com/t/c/font_3596365_861qcmiscke.woff?t=1694596490326') format('woff'),
-       url('//at.alicdn.com/t/c/font_3596365_861qcmiscke.ttf?t=1694596490326') format('truetype');
+  font-family: "iconfont";
+  /* Project id 4244895 */
+  src: url('//at.alicdn.com/t/c/font_4244895_2ac1ojm5hpf.woff2?t=1694685708304') format('woff2'),
+    url('//at.alicdn.com/t/c/font_4244895_2ac1ojm5hpf.woff?t=1694685708304') format('woff'),
+    url('//at.alicdn.com/t/c/font_4244895_2ac1ojm5hpf.ttf?t=1694685708304') format('truetype');
 }
 
 .iconfont {
@@ -13,19 +14,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-xinlangweibo:before {
-  content: "\e600";
+.icon-home:before {
+  content: "\ea43";
+}
+
+.icon-QQ:before {
+  content: "\e65e";
 }
 
 .icon-weixin:before {
-  content: "\e601";
+  content: "\e607";
 }
 
-.icon-duihuaxinxitianchong:before {
-  content: "\e67a";
+.icon-github:before {
+  content: "\e63a";
 }
-
-.icon-banshou:before {
-  content: "\e659";
-}
-
